@@ -1,0 +1,14 @@
+.venv*
+.git
+.agents
+.codex
+__pycache__
+.pytest_cache
+runtime
+outputs
+data/raw
+artifacts/category
+artifacts/price_response/*.joblib
+artifacts/price_response/*.csv
+artifacts/product/predictions.csv
+artifacts/product/best_ml_model.joblib

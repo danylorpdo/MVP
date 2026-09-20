@@ -1,0 +1,5 @@
+level,period,entities,periods,cells,observed_cells,density_pct,median_units_positive,median_active_periods_per_entity
+product_id,day,32081,608,19505248,92317,0.47329313628824404,1.0,1.0
+product_id,week,32040,86,2755440,77352,2.8072467555091016,1.0,1.0
+category,day,74,608,44992,18685,41.52960526315789,3.0,179.5
+category,week,74,86,6364,4379,68.80892520427405,7.0,69.0

@@ -1,0 +1,68 @@
+{
+  "winner": "MovingAverage4",
+  "best_ml": "Polynomial",
+  "entities": 136,
+  "rows_panel": 11696,
+  "rows_used": 11016,
+  "splits": {
+    "test": {
+      "rows": 2176,
+      "weeks": 16,
+      "start": "2018-05-07",
+      "end_week_start": "2018-08-20",
+      "target_units": 1143,
+      "zero_fraction": 0.8143382352941176,
+      "available_label_units": null
+    },
+    "train": {
+      "rows": 6528,
+      "weeks": 48,
+      "start": "2017-01-30",
+      "end_week_start": "2017-12-25",
+      "target_units": 7625,
+      "zero_fraction": 0.5914522058823529,
+      "available_label_units": 7217
+    },
+    "validation": {
+      "rows": 2312,
+      "weeks": 17,
+      "start": "2018-01-01",
+      "end_week_start": "2018-04-23",
+      "target_units": 2415,
+      "zero_fraction": 0.6570069204152249,
+      "available_label_units": 2148
+    }
+  },
+  "selection_ranking": [
+    {
+      "model": "MovingAverage4",
+      "MAE": 0.8007136678200693,
+      "RMSE": 1.8373895113075442
+    },
+    {
+      "model": "Polynomial",
+      "MAE": 0.9212919973282254,
+      "RMSE": 2.30658281101734
+    },
+    {
+      "model": "PreviousWeek",
+      "MAE": 0.9238754325259516,
+      "RMSE": 2.3076523818744743
+    },
+    {
+      "model": "RandomForest",
+      "MAE": 0.9367187262390109,
+      "RMSE": 1.8324144317595275
+    },
+    {
+      "model": "Linear",
+      "MAE": 0.9557464959308788,
+      "RMSE": 1.782152960088751
+    },
+    {
+      "model": "GradientBoosting",
+      "MAE": 0.9944263329778402,
+      "RMSE": 1.8114392840355409
+    }
+  ]
+}

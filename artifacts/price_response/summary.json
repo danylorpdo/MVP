@@ -1,0 +1,40 @@
+{
+  "protected_files_unchanged": true,
+  "protected_files_count": 51,
+  "scenario_only_changes_checked": true,
+  "frozen_products": 136,
+  "train_products": 136,
+  "counts": {
+    "panel_eligible_rows": 11016,
+    "active_rows": 3864,
+    "active_missing_last_price": 232
+  },
+  "cohorts": {
+    "train_available": {
+      "rows": 2370,
+      "products": 136,
+      "categories": 28
+    },
+    "validation_available": {
+      "rows": 735,
+      "products": 106,
+      "categories": 25
+    },
+    "validation": {
+      "rows": 793,
+      "products": 106,
+      "categories": 25
+    },
+    "test": {
+      "rows": 404,
+      "products": 69,
+      "categories": 24
+    }
+  },
+  "predictive_candidate": "LogLogPooled",
+  "elasticity": -1.5255852107075418,
+  "elasticity_bootstrap_interval": [
+    -2.1297333382091654,
+    -1.0937808448614854
+  ]
+}

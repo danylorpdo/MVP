@@ -1,0 +1,11 @@
+{
+  "training_cutoff": "2018-01-01",
+  "selected_products": 149,
+  "items": 12026,
+  "observed_product_weeks": 4213,
+  "possible_product_weeks": 12814,
+  "density_pct": 32.878102075854535,
+  "training_items": 7989,
+  "later_items": 4037,
+  "later_products": 121
+}

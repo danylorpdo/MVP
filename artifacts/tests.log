@@ -1,0 +1,11 @@
+test_boundary_week_is_excluded (test_temporal_pipeline.TemporalTests.test_boundary_week_is_excluded) ... ok
+test_exact_cutoff_not_visible (test_temporal_pipeline.TemporalTests.test_exact_cutoff_not_visible) ... ok
+test_future_purchase_and_delivery_cannot_change_past_features (test_temporal_pipeline.TemporalTests.test_future_purchase_and_delivery_cannot_change_past_features) ... ok
+test_label_censoring_is_explicit (test_temporal_pipeline.TemporalTests.test_label_censoring_is_explicit) ... ok
+test_old_purchase_with_future_delivery_not_known (test_temporal_pipeline.TemporalTests.test_old_purchase_with_future_delivery_not_known) ... ok
+test_zero_sales_is_not_known_availability (test_temporal_pipeline.TemporalTests.test_zero_sales_is_not_known_availability) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.324s
+
+OK

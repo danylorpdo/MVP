@@ -1,0 +1,35 @@
+services:
+  api:
+    build: .
+    image: projapa-pricing:1.0.0
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      PRICING_DB_PATH: /app/runtime/simulations.sqlite
+    volumes:
+      - simulation_data:/app/runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  ui:
+    build: .
+    image: projapa-pricing:1.0.0
+    command: ["python", "-m", "streamlit", "run", "pricing/ui.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "127.0.0.1:8501:8501"
+    environment:
+      PRICING_API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+volumes:
+  simulation_data:

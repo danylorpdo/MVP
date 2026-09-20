@@ -1,0 +1,13 @@
+model,split,cases,median_delta_units_plus10,median_factor_plus10,any_increase_with_price_count,increase_at_plus10_count,flat_response_count,near_zero_denominator_count,large_response_count,large_factor_count,negative_raw_any_count,any_outside_product_support_count
+GradientBoosting,test,404,0.0,1.0,8,0,19,0,2,0,0,380
+GradientBoosting,validation,793,0.0,1.0,21,3,41,0,8,0,0,755
+Linear,test,404,-0.7327002239588452,0.8085202704962188,0,0,2,18,45,0,31,380
+Linear,validation,793,-0.7327002239588452,0.7912640643693132,0,0,0,6,48,0,12,755
+LogLogCategory,test,404,-0.4201168852914199,0.8286967091735289,15,15,0,0,31,0,0,380
+LogLogCategory,validation,793,-0.22683987002429218,0.8646730669828552,45,45,0,0,54,0,0,755
+LogLogPooled,test,404,-0.36209159615864595,0.8646730669828544,0,0,0,0,0,0,0,380
+LogLogPooled,validation,793,-0.27098724380089134,0.8646730669828544,0,0,0,0,0,0,0,755
+Polynomial,test,404,0.0,,4,4,400,404,0,0,404,380
+Polynomial,validation,793,0.0,0.0,2,2,708,745,42,0,773,755
+RandomForest,test,404,0.0,1.0,246,170,21,0,7,0,0,380
+RandomForest,validation,793,-0.002777777777777324,0.9989781481208916,486,314,46,0,8,0,0,755

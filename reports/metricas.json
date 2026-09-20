@@ -1,0 +1,184 @@
+{
+  "inventory": [
+    {
+      "table": "olist_customers_dataset",
+      "rows": 99441,
+      "columns": 5,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_geolocation_dataset",
+      "rows": 1000163,
+      "columns": 5,
+      "duplicate_rows": 261831
+    },
+    {
+      "table": "olist_order_items_dataset",
+      "rows": 112650,
+      "columns": 7,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_order_payments_dataset",
+      "rows": 103886,
+      "columns": 5,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_order_reviews_dataset",
+      "rows": 99224,
+      "columns": 7,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_orders_dataset",
+      "rows": 99441,
+      "columns": 8,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_products_dataset",
+      "rows": 32951,
+      "columns": 9,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "olist_sellers_dataset",
+      "rows": 3095,
+      "columns": 4,
+      "duplicate_rows": 0
+    },
+    {
+      "table": "product_category_name_translation",
+      "rows": 71,
+      "columns": 2,
+      "duplicate_rows": 0
+    }
+  ],
+  "orders": 99441,
+  "items": 112650,
+  "products_catalog": 32951,
+  "products_sold": 32951,
+  "categories_catalog": 73,
+  "missing_category_catalog": 610,
+  "sellers": 3095,
+  "status": {
+    "delivered": 96478,
+    "shipped": 1107,
+    "canceled": 625,
+    "unavailable": 609,
+    "invoiced": 314,
+    "processing": 301,
+    "created": 5,
+    "approved": 2
+  },
+  "purchase_min": "2016-09-04 21:15:19",
+  "purchase_max": "2018-10-17 17:30:18",
+  "unmatched_orders": 0,
+  "unmatched_products": 0,
+  "nonpositive_prices": 0,
+  "negative_freight": 0,
+  "price_all": {
+    "count": 112650.0,
+    "mean": 120.65373901464713,
+    "std": 183.6339280502594,
+    "min": 0.85,
+    "25%": 39.9,
+    "50%": 74.99,
+    "75%": 134.9,
+    "90%": 229.8,
+    "95%": 349.9,
+    "99%": 890.0,
+    "max": 6735.0
+  },
+  "delivered_orders": 96478,
+  "delivered_items": 110197,
+  "delivered_products": 32216,
+  "single_sale_products": 17716,
+  "products_multiple_prices": 5806,
+  "products_multiple_days": 12991,
+  "products_daily_price_variation": 5806,
+  "product_seller_pairs": 33659,
+  "pairs_multiple_days": 13212,
+  "pairs_daily_price_variation": 5360,
+  "products_with_pair_variation": 5192,
+  "product_items_distribution": {
+    "count": 32216.0,
+    "mean": 3.42056741991557,
+    "std": 10.58438773666073,
+    "min": 1.0,
+    "25%": 1.0,
+    "50%": 1.0,
+    "75%": 3.0,
+    "90%": 6.0,
+    "95%": 11.0,
+    "99%": 33.0,
+    "max": 520.0
+  },
+  "product_active_weeks_distribution": {
+    "count": 32216.0,
+    "mean": 2.412248572138068,
+    "std": 3.637441007428386,
+    "min": 1.0,
+    "25%": 1.0,
+    "50%": 1.0,
+    "75%": 2.0,
+    "90%": 5.0,
+    "95%": 8.0,
+    "99%": 18.0,
+    "max": 75.0
+  },
+  "products_20_orders_8_weeks_2_prices": 491,
+  "analysis_items": 109880,
+  "analysis_orders": 96211,
+  "weekly_items": 109748,
+  "weeks": 86,
+  "eligible_categories": 18,
+  "eligible_units": 92944,
+  "density": [
+    {
+      "level": "product_id",
+      "period": "day",
+      "entities": 32081,
+      "periods": 608,
+      "cells": 19505248,
+      "observed_cells": 92317,
+      "density_pct": 0.47329313628824404,
+      "median_units_positive": 1.0,
+      "median_active_periods_per_entity": 1.0
+    },
+    {
+      "level": "product_id",
+      "period": "week",
+      "entities": 32040,
+      "periods": 86,
+      "cells": 2755440,
+      "observed_cells": 77352,
+      "density_pct": 2.8072467555091016,
+      "median_units_positive": 1.0,
+      "median_active_periods_per_entity": 1.0
+    },
+    {
+      "level": "category",
+      "period": "day",
+      "entities": 74,
+      "periods": 608,
+      "cells": 44992,
+      "observed_cells": 18685,
+      "density_pct": 41.52960526315789,
+      "median_units_positive": 3.0,
+      "median_active_periods_per_entity": 179.5
+    },
+    {
+      "level": "category",
+      "period": "week",
+      "entities": 74,
+      "periods": 86,
+      "cells": 6364,
+      "observed_cells": 4379,
+      "density_pct": 68.80892520427405,
+      "median_units_positive": 7.0,
+      "median_active_periods_per_entity": 69.0
+    }
+  ]
+}

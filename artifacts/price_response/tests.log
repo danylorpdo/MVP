@@ -1,0 +1,10 @@
+test_old_experiment_is_unchanged (test_price_response.PriceResponseTests.test_old_experiment_is_unchanged) ... ok
+test_only_price_is_contemporaneous (test_price_response.PriceResponseTests.test_only_price_is_contemporaneous) ... ok
+test_price_transforms_are_coherent (test_price_response.PriceResponseTests.test_price_transforms_are_coherent) ... ok
+test_saved_predictive_artifact_reproduces_predictions (test_price_response.PriceResponseTests.test_saved_predictive_artifact_reproduces_predictions) ... ok
+test_scenario_does_not_mutate_history (test_price_response.PriceResponseTests.test_scenario_does_not_mutate_history) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.227s
+
+OK

@@ -1,0 +1,51 @@
+{
+  "seed": 42,
+  "price_proxy": "Mediana do preço realizado nos itens da semana de compra; somente cenário, não oferta contínua",
+  "target": "Itens de pedidos entregues por produto e semana da compra, condicionado a transação/preço observado",
+  "frozen_selection": "artifacts/selection.json",
+  "selection_metric": "MAE na validação com vendas e preço confirmados antes de 2018-05-01",
+  "train_labels": "Entregas confirmadas antes de 2018-01-01; somente label_available_train>0",
+  "eval_labels": "target_units eventual, somente semanas ativas",
+  "scenario_fields": [
+    "scenario_price",
+    "price_ratio_to_last_observed",
+    "price_change_pct",
+    "log_price_ratio"
+  ],
+  "input_features": [
+    "units_lag_1",
+    "units_lag_2",
+    "units_lag_4",
+    "units_mean_4w",
+    "units_std_4w",
+    "active_weeks_8w",
+    "weeks_since_last_sale",
+    "price_age_weeks",
+    "category_units_lag_1",
+    "category_units_mean_4w",
+    "week_sin",
+    "week_cos",
+    "time_index",
+    "log_last_observed_price",
+    "log_price_ratio",
+    "entity_id",
+    "category"
+  ],
+  "sensitivity_grid": [
+    0.9,
+    0.95,
+    1.0,
+    1.05,
+    1.1
+  ],
+  "flags": {
+    "flat_relative_range": 0.01,
+    "large_relative_range": 1.0,
+    "large_factor_vs_current": 2.0,
+    "near_zero_base_prediction": 0.1
+  },
+  "polynomial": "grau 2 sobre numéricas; Ridge alpha=1 fixado antes da execução, sem tuning",
+  "scope": "modelos compartilhados com produto e categoria codificados no treino",
+  "no_monotonicity": true,
+  "no_refit": true
+}

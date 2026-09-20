@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "target": "Itens de pedidos entregues, agrupados pela semana da compra; alvo retrospectivo, não demanda latente",
+  "train_end_exclusive": "2018-01-01 00:00:00",
+  "selection_at": "2018-05-01 00:00:00",
+  "week_policy": "segunda a domingo; excluir semana de 2018-04-30 que cruza validação/teste",
+  "eligibility": {
+    "min_orders": 20,
+    "min_active_weeks": 8,
+    "min_prices": 2,
+    "available_before": "2018-01-01 00:00:00"
+  },
+  "label_policy": "Treino usa contagem confirmada antes de 2018-01-01; seleção usa contagem confirmada antes de 2018-05-01. Alvo eventual preservado separadamente para avaliação retrospectiva. Rótulos disponíveis são censurados à direita.",
+  "selection": "menor MAE na validação com rótulo disponível em 2018-05-01; desempate RMSE e nome; inclui baselines",
+  "refit": false,
+  "negative_predictions": "clip em zero, comum a todos",
+  "numeric_features": [
+    "units_lag_1",
+    "units_lag_2",
+    "units_lag_4",
+    "units_mean_4w",
+    "units_std_4w",
+    "active_weeks_8w",
+    "weeks_since_last_sale",
+    "last_observed_price",
+    "price_age_weeks",
+    "price_missing",
+    "price_change_last_observed",
+    "freight_median_lag",
+    "sellers_count_4w",
+    "category_units_lag_1",
+    "category_units_mean_4w",
+    "week_sin",
+    "week_cos",
+    "time_index",
+    "history_weeks"
+  ],
+  "categorical_features": [
+    "category"
+  ]
+}

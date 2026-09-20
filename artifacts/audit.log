@@ -1,0 +1,4 @@
+PASS: seleção não muda com mutação de preços/categorias de 2018.
+PASS: produtos são subconjunto dos elegíveis da auditoria anterior.
+PASS: medianas dos imputadores coincidem com treino apenas.
+PASS: matrizes sem chaves duplicadas ou infinitos; alvos fora das features.

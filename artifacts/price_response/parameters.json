@@ -1,0 +1,427 @@
+{
+  "Linear": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocess",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])"
+      ],
+      [
+        "regressor",
+        "LinearRegression()"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocess": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])",
+    "regressor": "LinearRegression()",
+    "preprocess__force_int_remainder_cols": "deprecated",
+    "preprocess__n_jobs": null,
+    "preprocess__remainder": "drop",
+    "preprocess__sparse_threshold": 0.3,
+    "preprocess__transformer_weights": null,
+    "preprocess__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+        [
+          "units_lag_1",
+          "units_lag_2",
+          "units_lag_4",
+          "units_mean_4w",
+          "units_std_4w",
+          "active_weeks_8w",
+          "weeks_since_last_sale",
+          "price_age_weeks",
+          "category_units_lag_1",
+          "category_units_mean_4w",
+          "week_sin",
+          "week_cos",
+          "time_index",
+          "log_last_observed_price",
+          "log_price_ratio"
+        ]
+      ],
+      [
+        "categorical",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+        [
+          "entity_id",
+          "category"
+        ]
+      ]
+    ],
+    "preprocess__verbose": false,
+    "preprocess__verbose_feature_names_out": true,
+    "preprocess__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+    "preprocess__categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocess__numeric__memory": null,
+    "preprocess__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocess__numeric__transform_input": null,
+    "preprocess__numeric__verbose": false,
+    "preprocess__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocess__numeric__scale": "StandardScaler()",
+    "preprocess__numeric__impute__add_indicator": false,
+    "preprocess__numeric__impute__copy": true,
+    "preprocess__numeric__impute__fill_value": null,
+    "preprocess__numeric__impute__keep_empty_features": true,
+    "preprocess__numeric__impute__missing_values": NaN,
+    "preprocess__numeric__impute__strategy": "median",
+    "preprocess__numeric__scale__copy": true,
+    "preprocess__numeric__scale__with_mean": true,
+    "preprocess__numeric__scale__with_std": true,
+    "preprocess__categorical__categories": "auto",
+    "preprocess__categorical__drop": null,
+    "preprocess__categorical__dtype": "<class 'numpy.float64'>",
+    "preprocess__categorical__feature_name_combiner": "concat",
+    "preprocess__categorical__handle_unknown": "ignore",
+    "preprocess__categorical__max_categories": null,
+    "preprocess__categorical__min_frequency": null,
+    "preprocess__categorical__sparse_output": false,
+    "regressor__copy_X": true,
+    "regressor__fit_intercept": true,
+    "regressor__n_jobs": null,
+    "regressor__positive": false,
+    "regressor__tol": 1e-06
+  },
+  "Polynomial": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocess",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler()),\n                                                 ('poly',\n                                                  PolynomialFeatures(include_bias=False)),\n                                                 ('poly_scale',\n                                                  StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])"
+      ],
+      [
+        "regressor",
+        "Ridge()"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocess": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler()),\n                                                 ('poly',\n                                                  PolynomialFeatures(include_bias=False)),\n                                                 ('poly_scale',\n                                                  StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])",
+    "regressor": "Ridge()",
+    "preprocess__force_int_remainder_cols": "deprecated",
+    "preprocess__n_jobs": null,
+    "preprocess__remainder": "drop",
+    "preprocess__sparse_threshold": 0.3,
+    "preprocess__transformer_weights": null,
+    "preprocess__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler()),\n                ('poly', PolynomialFeatures(include_bias=False)),\n                ('poly_scale', StandardScaler())])",
+        [
+          "units_lag_1",
+          "units_lag_2",
+          "units_lag_4",
+          "units_mean_4w",
+          "units_std_4w",
+          "active_weeks_8w",
+          "weeks_since_last_sale",
+          "price_age_weeks",
+          "category_units_lag_1",
+          "category_units_mean_4w",
+          "week_sin",
+          "week_cos",
+          "time_index",
+          "log_last_observed_price",
+          "log_price_ratio"
+        ]
+      ],
+      [
+        "categorical",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+        [
+          "entity_id",
+          "category"
+        ]
+      ]
+    ],
+    "preprocess__verbose": false,
+    "preprocess__verbose_feature_names_out": true,
+    "preprocess__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler()),\n                ('poly', PolynomialFeatures(include_bias=False)),\n                ('poly_scale', StandardScaler())])",
+    "preprocess__categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocess__numeric__memory": null,
+    "preprocess__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ],
+      [
+        "poly",
+        "PolynomialFeatures(include_bias=False)"
+      ],
+      [
+        "poly_scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocess__numeric__transform_input": null,
+    "preprocess__numeric__verbose": false,
+    "preprocess__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocess__numeric__scale": "StandardScaler()",
+    "preprocess__numeric__poly": "PolynomialFeatures(include_bias=False)",
+    "preprocess__numeric__poly_scale": "StandardScaler()",
+    "preprocess__numeric__impute__add_indicator": false,
+    "preprocess__numeric__impute__copy": true,
+    "preprocess__numeric__impute__fill_value": null,
+    "preprocess__numeric__impute__keep_empty_features": true,
+    "preprocess__numeric__impute__missing_values": NaN,
+    "preprocess__numeric__impute__strategy": "median",
+    "preprocess__numeric__scale__copy": true,
+    "preprocess__numeric__scale__with_mean": true,
+    "preprocess__numeric__scale__with_std": true,
+    "preprocess__numeric__poly__degree": 2,
+    "preprocess__numeric__poly__include_bias": false,
+    "preprocess__numeric__poly__interaction_only": false,
+    "preprocess__numeric__poly__order": "C",
+    "preprocess__numeric__poly_scale__copy": true,
+    "preprocess__numeric__poly_scale__with_mean": true,
+    "preprocess__numeric__poly_scale__with_std": true,
+    "preprocess__categorical__categories": "auto",
+    "preprocess__categorical__drop": null,
+    "preprocess__categorical__dtype": "<class 'numpy.float64'>",
+    "preprocess__categorical__feature_name_combiner": "concat",
+    "preprocess__categorical__handle_unknown": "ignore",
+    "preprocess__categorical__max_categories": null,
+    "preprocess__categorical__min_frequency": null,
+    "preprocess__categorical__sparse_output": false,
+    "regressor__alpha": 1.0,
+    "regressor__copy_X": true,
+    "regressor__fit_intercept": true,
+    "regressor__max_iter": null,
+    "regressor__positive": false,
+    "regressor__random_state": null,
+    "regressor__solver": "auto",
+    "regressor__tol": 0.0001
+  },
+  "RandomForest": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocess",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])"
+      ],
+      [
+        "regressor",
+        "RandomForestRegressor(max_depth=8, min_samples_leaf=5, n_estimators=200,\n                      n_jobs=2, random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocess": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])",
+    "regressor": "RandomForestRegressor(max_depth=8, min_samples_leaf=5, n_estimators=200,\n                      n_jobs=2, random_state=42)",
+    "preprocess__force_int_remainder_cols": "deprecated",
+    "preprocess__n_jobs": null,
+    "preprocess__remainder": "drop",
+    "preprocess__sparse_threshold": 0.3,
+    "preprocess__transformer_weights": null,
+    "preprocess__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+        [
+          "units_lag_1",
+          "units_lag_2",
+          "units_lag_4",
+          "units_mean_4w",
+          "units_std_4w",
+          "active_weeks_8w",
+          "weeks_since_last_sale",
+          "price_age_weeks",
+          "category_units_lag_1",
+          "category_units_mean_4w",
+          "week_sin",
+          "week_cos",
+          "time_index",
+          "log_last_observed_price",
+          "log_price_ratio"
+        ]
+      ],
+      [
+        "categorical",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+        [
+          "entity_id",
+          "category"
+        ]
+      ]
+    ],
+    "preprocess__verbose": false,
+    "preprocess__verbose_feature_names_out": true,
+    "preprocess__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+    "preprocess__categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocess__numeric__memory": null,
+    "preprocess__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocess__numeric__transform_input": null,
+    "preprocess__numeric__verbose": false,
+    "preprocess__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocess__numeric__scale": "StandardScaler()",
+    "preprocess__numeric__impute__add_indicator": false,
+    "preprocess__numeric__impute__copy": true,
+    "preprocess__numeric__impute__fill_value": null,
+    "preprocess__numeric__impute__keep_empty_features": true,
+    "preprocess__numeric__impute__missing_values": NaN,
+    "preprocess__numeric__impute__strategy": "median",
+    "preprocess__numeric__scale__copy": true,
+    "preprocess__numeric__scale__with_mean": true,
+    "preprocess__numeric__scale__with_std": true,
+    "preprocess__categorical__categories": "auto",
+    "preprocess__categorical__drop": null,
+    "preprocess__categorical__dtype": "<class 'numpy.float64'>",
+    "preprocess__categorical__feature_name_combiner": "concat",
+    "preprocess__categorical__handle_unknown": "ignore",
+    "preprocess__categorical__max_categories": null,
+    "preprocess__categorical__min_frequency": null,
+    "preprocess__categorical__sparse_output": false,
+    "regressor__bootstrap": true,
+    "regressor__ccp_alpha": 0.0,
+    "regressor__criterion": "squared_error",
+    "regressor__max_depth": 8,
+    "regressor__max_features": 1.0,
+    "regressor__max_leaf_nodes": null,
+    "regressor__max_samples": null,
+    "regressor__min_impurity_decrease": 0.0,
+    "regressor__min_samples_leaf": 5,
+    "regressor__min_samples_split": 2,
+    "regressor__min_weight_fraction_leaf": 0.0,
+    "regressor__monotonic_cst": null,
+    "regressor__n_estimators": 200,
+    "regressor__n_jobs": 2,
+    "regressor__oob_score": false,
+    "regressor__random_state": 42,
+    "regressor__verbose": 0,
+    "regressor__warm_start": false
+  },
+  "GradientBoosting": {
+    "memory": null,
+    "steps": [
+      [
+        "preprocess",
+        "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])"
+      ],
+      [
+        "regressor",
+        "GradientBoostingRegressor(learning_rate=0.05, max_depth=2, min_samples_leaf=10,\n                          n_estimators=150, random_state=42)"
+      ]
+    ],
+    "transform_input": null,
+    "verbose": false,
+    "preprocess": "ColumnTransformer(transformers=[('numeric',\n                                 Pipeline(steps=[('impute',\n                                                  SimpleImputer(keep_empty_features=True,\n                                                                strategy='median')),\n                                                 ('scale', StandardScaler())]),\n                                 ['units_lag_1', 'units_lag_2', 'units_lag_4',\n                                  'units_mean_4w', 'units_std_4w',\n                                  'active_weeks_8w', 'weeks_since_last_sale',\n                                  'price_age_weeks', 'category_units_lag_1',\n                                  'category_units_mean_4w', 'week_sin',\n                                  'week_cos', 'time_index',\n                                  'log_last_observed_price',\n                                  'log_price_ratio']),\n                                ('categorical',\n                                 OneHotEncoder(handle_unknown='ignore',\n                                               sparse_output=False),\n                                 ['entity_id', 'category'])])",
+    "regressor": "GradientBoostingRegressor(learning_rate=0.05, max_depth=2, min_samples_leaf=10,\n                          n_estimators=150, random_state=42)",
+    "preprocess__force_int_remainder_cols": "deprecated",
+    "preprocess__n_jobs": null,
+    "preprocess__remainder": "drop",
+    "preprocess__sparse_threshold": 0.3,
+    "preprocess__transformer_weights": null,
+    "preprocess__transformers": [
+      [
+        "numeric",
+        "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+        [
+          "units_lag_1",
+          "units_lag_2",
+          "units_lag_4",
+          "units_mean_4w",
+          "units_std_4w",
+          "active_weeks_8w",
+          "weeks_since_last_sale",
+          "price_age_weeks",
+          "category_units_lag_1",
+          "category_units_mean_4w",
+          "week_sin",
+          "week_cos",
+          "time_index",
+          "log_last_observed_price",
+          "log_price_ratio"
+        ]
+      ],
+      [
+        "categorical",
+        "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+        [
+          "entity_id",
+          "category"
+        ]
+      ]
+    ],
+    "preprocess__verbose": false,
+    "preprocess__verbose_feature_names_out": true,
+    "preprocess__numeric": "Pipeline(steps=[('impute',\n                 SimpleImputer(keep_empty_features=True, strategy='median')),\n                ('scale', StandardScaler())])",
+    "preprocess__categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+    "preprocess__numeric__memory": null,
+    "preprocess__numeric__steps": [
+      [
+        "impute",
+        "SimpleImputer(keep_empty_features=True, strategy='median')"
+      ],
+      [
+        "scale",
+        "StandardScaler()"
+      ]
+    ],
+    "preprocess__numeric__transform_input": null,
+    "preprocess__numeric__verbose": false,
+    "preprocess__numeric__impute": "SimpleImputer(keep_empty_features=True, strategy='median')",
+    "preprocess__numeric__scale": "StandardScaler()",
+    "preprocess__numeric__impute__add_indicator": false,
+    "preprocess__numeric__impute__copy": true,
+    "preprocess__numeric__impute__fill_value": null,
+    "preprocess__numeric__impute__keep_empty_features": true,
+    "preprocess__numeric__impute__missing_values": NaN,
+    "preprocess__numeric__impute__strategy": "median",
+    "preprocess__numeric__scale__copy": true,
+    "preprocess__numeric__scale__with_mean": true,
+    "preprocess__numeric__scale__with_std": true,
+    "preprocess__categorical__categories": "auto",
+    "preprocess__categorical__drop": null,
+    "preprocess__categorical__dtype": "<class 'numpy.float64'>",
+    "preprocess__categorical__feature_name_combiner": "concat",
+    "preprocess__categorical__handle_unknown": "ignore",
+    "preprocess__categorical__max_categories": null,
+    "preprocess__categorical__min_frequency": null,
+    "preprocess__categorical__sparse_output": false,
+    "regressor__alpha": 0.9,
+    "regressor__ccp_alpha": 0.0,
+    "regressor__criterion": "friedman_mse",
+    "regressor__init": null,
+    "regressor__learning_rate": 0.05,
+    "regressor__loss": "squared_error",
+    "regressor__max_depth": 2,
+    "regressor__max_features": null,
+    "regressor__max_leaf_nodes": null,
+    "regressor__min_impurity_decrease": 0.0,
+    "regressor__min_samples_leaf": 10,
+    "regressor__min_samples_split": 2,
+    "regressor__min_weight_fraction_leaf": 0.0,
+    "regressor__n_estimators": 150,
+    "regressor__n_iter_no_change": null,
+    "regressor__random_state": 42,
+    "regressor__subsample": 1.0,
+    "regressor__tol": 0.0001,
+    "regressor__validation_fraction": 0.1,
+    "regressor__verbose": 0,
+    "regressor__warm_start": false
+  }
+}
