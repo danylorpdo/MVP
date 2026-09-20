@@ -3,6 +3,7 @@ __pycache__/
 data/raw/*
 !data/raw/manifest.json
 data/processed/*
+!data/processed/product_week_features.csv
 .venv-app/
 runtime/
 .pytest_cache/
