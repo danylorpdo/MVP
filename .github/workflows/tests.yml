@@ -1,0 +1,59 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scientific-tests:
+    name: Scientific tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-modeling.txt
+
+      - name: Install scientific dependencies
+        run: python -m pip install -r requirements-modeling.txt
+
+      - name: Prepare frozen scientific test data
+        run: |
+          mkdir -p data/processed/price_response
+          cp tests/fixtures/scientific/active_product_week.csv data/processed/price_response/active_product_week.csv
+          cp tests/fixtures/scientific/category_week_diagnostic.csv data/processed/category_week_diagnostic.csv
+          cp tests/fixtures/scientific/category_week_features.csv data/processed/category_week_features.csv
+
+      - name: Run scientific tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+  mvp-tests:
+    name: MVP tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-app.txt
+
+      - name: Install MVP dependencies
+        run: python -m pip install -r requirements-app.txt
+
+      - name: Run MVP tests
+        run: python -m pytest -q
