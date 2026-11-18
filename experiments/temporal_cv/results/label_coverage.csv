@@ -1,0 +1,17 @@
+level,fold,partition,cutoff,n_total,n_known_zero,n_complete_positive,n_censored,n_weeks
+product,fold_1,train,2018-01-01,6528,3848,2420,260,48
+product,fold_1,validation,2018-01-29,544,340,80,124,4
+product,fold_2,train,2018-01-29,7072,4188,2655,229,52
+product,fold_2,validation,2018-02-26,544,351,65,128,4
+product,fold_3,train,2018-02-26,7616,4539,2833,244,56
+product,fold_3,validation,2018-03-26,544,352,53,139,4
+product,fold_4,train,2018-03-26,8160,4891,3002,267,60
+product,fold_4,validation,2018-05-01,680,470,114,96,5
+category,fold_1,train,2018-01-01,672,0,207,465,48
+category,fold_1,validation,2018-01-29,56,0,0,56,4
+category,fold_2,train,2018-01-29,728,0,223,505,52
+category,fold_2,validation,2018-02-26,56,0,0,56,4
+category,fold_3,train,2018-02-26,784,0,233,551,56
+category,fold_3,validation,2018-03-26,56,0,0,56,4
+category,fold_4,train,2018-03-26,840,0,252,588,60
+category,fold_4,validation,2018-05-01,70,0,0,70,5

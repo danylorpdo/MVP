@@ -1,0 +1,4 @@
+# Ferramentas opcionais locais para orquestração e rastreamento.
+# Não são necessárias para executar os testes científicos existentes.
+dvc>=3,<4
+mlflow>=2,<4

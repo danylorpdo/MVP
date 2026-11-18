@@ -1,0 +1,47 @@
+{
+  "experiment": "temporal_cv_complementary",
+  "seed": 42,
+  "currently_selected_model": "MovingAverage4",
+  "selection_rule": "mean validation MAE across folds; mean validation RMSE tie-break; deterministic model/parameter ordering",
+  "label_definition": "confirmed delivered count by label_cutoff; cohorts with unconfirmed purchases are flagged censored lower bounds; structural zero only when no purchase occurred",
+  "test_policy": "retrospective test (2018-05-07 onward) excluded from fold construction, fitting, ranking, and exports",
+  "test_start_excluded": "2018-05-07",
+  "folds": [
+    {
+      "name": "fold_1",
+      "train_cutoff": "2018-01-01",
+      "validation_start": "2018-01-01",
+      "validation_end_exclusive": "2018-01-29",
+      "label_cutoff": "2018-01-29"
+    },
+    {
+      "name": "fold_2",
+      "train_cutoff": "2018-01-29",
+      "validation_start": "2018-01-29",
+      "validation_end_exclusive": "2018-02-26",
+      "label_cutoff": "2018-02-26"
+    },
+    {
+      "name": "fold_3",
+      "train_cutoff": "2018-02-26",
+      "validation_start": "2018-02-26",
+      "validation_end_exclusive": "2018-03-26",
+      "label_cutoff": "2018-03-26"
+    },
+    {
+      "name": "fold_4",
+      "train_cutoff": "2018-03-26",
+      "validation_start": "2018-03-26",
+      "validation_end_exclusive": "2018-05-01",
+      "label_cutoff": "2018-05-01"
+    }
+  ],
+  "candidate_count": 21,
+  "results": {
+    "metrics_csv": "fold_metrics.csv",
+    "predictions_csv": "fold_predictions.csv",
+    "ranking_csv": "candidate_ranking.csv",
+    "label_coverage_csv": "label_coverage.csv",
+    "report_markdown": "report.md"
+  }
+}

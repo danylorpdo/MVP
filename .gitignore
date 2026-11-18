@@ -7,3 +7,5 @@ data/processed/*
 .venv-app/
 runtime/
 .pytest_cache/
+mlruns/
+experiments/temporal_cv/results/fold_predictions.csv

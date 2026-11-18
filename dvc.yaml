@@ -1,0 +1,18 @@
+stages:
+  temporal_cv:
+    cmd: python -m experiments.temporal_cv.experiment
+    deps:
+      - experiments/temporal_cv/experiment.py
+      - scripts/modeling.py
+      - requirements-modeling.txt
+      - data/raw/olist_orders_dataset.csv
+      - data/raw/olist_order_items_dataset.csv
+      - data/raw/olist_products_dataset.csv
+    outs:
+      - experiments/temporal_cv/results/candidate_ranking.csv
+      - experiments/temporal_cv/results/fold_metrics.csv
+      - experiments/temporal_cv/results/label_coverage.csv
+      - experiments/temporal_cv/results/report.md
+      - experiments/temporal_cv/results/summary.json
+      - experiments/temporal_cv/results/fold_predictions.csv:
+          cache: false
